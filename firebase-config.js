@@ -1,10 +1,10 @@
 // Paste the config object from Firebase Console > Project Settings > Your apps > Web app
 // (see SETUP.md step 2)
 export const firebaseConfig = {
-  apiKey: "PASTE_API_KEY_HERE",
-  authDomain: "PASTE_AUTH_DOMAIN_HERE",
-  projectId: "PASTE_PROJECT_ID_HERE",
-  storageBucket: "PASTE_STORAGE_BUCKET_HERE",
-  messagingSenderId: "PASTE_MESSAGING_SENDER_ID_HERE",
-  appId: "PASTE_APP_ID_HERE",
+  apiKey: "AIzaSyBl6p8g7MZ8vyZma8kQs6-y5NIgBGLrkmI",
+  authDomain: "mallan-grocery-list.firebaseapp.com",
+  projectId: "mallan-grocery-list",
+  storageBucket: "mallan-grocery-list.firebasestorage.app",
+  messagingSenderId: "1017843522353",
+  appId: "1:1017843522353:web:2d61befa2860613aedae10",
 };
