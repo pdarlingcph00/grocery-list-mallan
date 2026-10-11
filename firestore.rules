@@ -5,8 +5,8 @@ service cloud.firestore {
     function isHousehold() {
       return request.auth != null
         && request.auth.uid in [
-          "PASTE_FIRST_USER_UID_HERE",
-          "PASTE_SECOND_USER_UID_HERE"
+          "Ijt4z743R0MmZIO5pQhKZRWtf3Z2",
+          "91zfoGLInNTylWwgumW6Kyc95Nq1"
         ];
     }
 
