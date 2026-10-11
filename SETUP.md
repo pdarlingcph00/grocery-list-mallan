@@ -68,14 +68,21 @@ branch**, pick `main` / `root`, save. After a minute your app is live at
 (Alternative: Cloudflare Pages or Netlify can connect to the same GitHub
 repo with a couple of clicks if you'd rather use those.)
 
-## 7. Install it on both iPhones
+## 7. Install it on the phones
 
-1. Open the URL from step 6 in **Safari** on each phone.
-2. Log in with each person's account (from step 4).
-3. Tap the **Share** icon > **Add to Home Screen**.
-4. Open it from the home screen icon from now on — it behaves like a normal app.
+**iPhone**
+1. Open the URL from step 6 in **Safari** (it must be Safari, not Chrome).
+2. Log in with that person's account (from step 4).
+3. Tap the **Share** icon > **Add to Home Screen** > **Add**.
+4. Open it from the "Mallan List" home screen icon from now on.
+
+**Android**
+1. Open the URL from step 6 in **Chrome**.
+2. Log in with that person's account (from step 4).
+3. Tap the **⋮** menu > **Add to Home screen** (or **Install app**) > **Install**.
+4. Open it from the "Mallan List" home screen icon from now on.
 
 ## 8. Test it
 
-Add an item on one phone, confirm it shows up on the other within a couple
+Add an item on the iPhone, confirm it shows up on the Android phone within a couple
 of seconds. Check an item off, delete one, and try "Clear checked items".
