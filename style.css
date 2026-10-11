@@ -1,0 +1,403 @@
+:root {
+  --green: #2e7d32;
+  --green-dark: #1b5e20;
+  --green-tint: #eaf4ea;
+  --bg: #f5f6f5;
+  --card: #ffffff;
+  --text: #1c1c1c;
+  --muted: #8a8f8a;
+  --border: #e3e5e2;
+  --danger: #c0392b;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* html font-size is adjusted at runtime (see app.js) to scale every rem value below. */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.view {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Login */
+#login-view {
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 360px;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.login-card h1 {
+  margin: 0 0 24px;
+  font-size: 1.375rem;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 0.8125rem;
+  margin: 4px 0 0;
+}
+
+/* App */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: calc(env(safe-area-inset-top) + 14px) 12px 14px 20px;
+  background: var(--green);
+  color: white;
+}
+
+.list-switcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.16);
+  border: none;
+  border-radius: 9px;
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 6px 10px;
+}
+
+.list-switcher #current-list-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.list-switcher .chevron {
+  font-size: 0.7rem;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+.icon-btn:active {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.icon-btn:disabled {
+  opacity: 0.4;
+}
+
+/* List switcher dropdown */
+.list-menu {
+  position: fixed;
+  top: calc(env(safe-area-inset-top) + 62px);
+  left: 16px;
+  right: 16px;
+  max-width: 320px;
+  z-index: 20;
+  background: var(--card);
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.list-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 45vh;
+  overflow-y: auto;
+}
+
+.list-menu li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.list-menu li.active {
+  background: var(--green-tint);
+  color: var(--green-dark);
+  font-weight: 700;
+}
+
+.list-menu li .list-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.list-menu li .del-list {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 2px 6px;
+}
+
+#new-list-form {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+#new-list-name {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 9px 10px;
+  font-size: 16px; /* fixed: iOS Safari zooms in on focus if an input's font-size is under 16px */
+}
+
+#new-list-form button {
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 0 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+#item-list {
+  list-style: none;
+  margin: 0;
+  padding: 12px 16px 150px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+#item-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 14px 14px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+#item-list li .check {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: white;
+}
+
+#item-list li.checked .check {
+  background: var(--green);
+}
+
+#item-list li .text {
+  flex: 1;
+  cursor: pointer;
+  word-break: break-word;
+  font-size: 1rem;
+}
+
+#item-list li.checked .text {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+#item-list li .meta {
+  font-size: 0.6875rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+#item-list li .delete {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.125rem;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 40px;
+  padding: 0 20px;
+  font-size: 1rem;
+}
+
+.add-area {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-suggestions {
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  max-height: 40vh;
+  overflow-y: auto;
+}
+
+.item-suggestions .suggestion {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding: 12px 16px;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.item-suggestions .suggestion:last-child {
+  border-bottom: none;
+}
+
+.item-suggestions .suggestion:active {
+  background: var(--green-tint);
+}
+
+#add-form {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+}
+
+#new-item {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 16px; /* fixed: iOS Safari zooms in on focus if an input's font-size is under 16px */
+}
+
+#add-form button {
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+input {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 16px; /* fixed: iOS Safari zooms in on focus if an input's font-size is under 16px */
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+#login-form button {
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.clear-btn {
+  position: fixed;
+  bottom: 148px;
+  right: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.logout-btn {
+  display: block;
+  width: 100%;
+  background: var(--card);
+  border: none;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8125rem;
+  text-align: center;
+  padding: 10px 16px calc(env(safe-area-inset-bottom) + 12px);
+}

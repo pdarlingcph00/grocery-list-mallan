@@ -1,0 +1,12 @@
+{
+  "name": "Grocery List",
+  "short_name": "Groceries",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f6f5",
+  "theme_color": "#2e7d32",
+  "icons": [
+    { "src": "icons/grocery-list-icon.jpg", "sizes": "1024x1024", "type": "image/jpeg" }
+  ]
+}

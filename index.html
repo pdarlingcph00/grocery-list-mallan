@@ -1,0 +1,66 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Grocery List</title>
+
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#2e7d32" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Groceries" />
+<link rel="apple-touch-icon" href="icons/grocery-list-icon.jpg" />
+<link rel="icon" href="icons/grocery-list-icon.jpg" />
+<link rel="stylesheet" href="style.css" />
+<script>
+  // Applied before first paint so the page doesn't flash at the wrong size.
+  var savedScale = localStorage.getItem("grocery-font-scale");
+  if (savedScale) document.documentElement.style.fontSize = (100 * parseFloat(savedScale)) + "%";
+</script>
+
+<div id="login-view" class="view hidden">
+  <div class="login-card">
+    <h1>🛒 Grocery List</h1>
+    <form id="login-form">
+      <input type="email" id="email" placeholder="Email" autocomplete="username" required />
+      <input type="password" id="password" placeholder="Password" autocomplete="current-password" required />
+      <button type="submit">Log In</button>
+      <p id="login-error" class="error hidden"></p>
+    </form>
+  </div>
+</div>
+
+<div id="app-view" class="view hidden">
+  <header>
+    <button id="list-switcher-btn" class="list-switcher" type="button">
+      <span id="current-list-name">🛒 Groceries</span>
+      <span class="chevron">▾</span>
+    </button>
+    <div class="header-actions">
+      <button id="font-smaller-btn" class="icon-btn" type="button" title="Smaller text">A−</button>
+      <button id="font-larger-btn" class="icon-btn" type="button" title="Larger text">A+</button>
+    </div>
+  </header>
+
+  <div id="list-menu" class="list-menu hidden">
+    <ul id="list-menu-items"></ul>
+    <form id="new-list-form">
+      <input type="text" id="new-list-name" placeholder="New list name…" autocomplete="off" required />
+      <button type="submit">Create</button>
+    </form>
+  </div>
+
+  <ul id="item-list"></ul>
+  <p id="empty-state" class="empty hidden">List's empty — add something below.</p>
+
+  <div id="add-area" class="add-area">
+    <div id="item-suggestions" class="item-suggestions hidden"></div>
+    <form id="add-form">
+      <input type="text" id="new-item" placeholder="Add an item…" autocomplete="off" required />
+      <button type="submit">Add</button>
+    </form>
+    <button id="logout-btn" class="logout-btn" type="button" title="Log out">Log out</button>
+  </div>
+
+  <button id="clear-checked-btn" class="clear-btn hidden">Clear checked items</button>
+</div>
+
+<script type="module" src="app.js"></script>
