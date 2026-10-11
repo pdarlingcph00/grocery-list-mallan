@@ -50,10 +50,9 @@ public infrastructure.
 
 No Node/npm is installed on this machine, so the simplest option is
 **GitHub Pages** (just needs a GitHub account and git, which you already
-have):
+have). The folder is already a git repo with everything committed.
 
-
-Then create a new empty repo on github.com (don't initialize it with a
+Create a new empty repo on github.com (don't initialize it with a
 README), and push:
 
 ```bash
