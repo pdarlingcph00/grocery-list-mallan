@@ -1,6 +1,6 @@
 {
-  "name": "Grocery List",
-  "short_name": "Groceries",
+  "name": "Mallan Grocery List",
+  "short_name": "Mallan List",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
