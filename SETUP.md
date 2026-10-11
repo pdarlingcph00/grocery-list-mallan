@@ -56,14 +56,14 @@ Create a new empty repo on github.com (don't initialize it with a
 README), and push:
 
 ```bash
-git remote add origin https://github.com/YOUR_USERNAME/grocery-list-2.git
+git remote add origin https://github.com/YOUR_USERNAME/grocery-list-mallan.git
 git branch -M main
 git push -u origin main
 ```
 
 Then in the repo on GitHub: **Settings > Pages > Source > Deploy from a
 branch**, pick `main` / `root`, save. After a minute your app is live at
-`https://YOUR_USERNAME.github.io/grocery-list-2/`.
+`https://YOUR_USERNAME.github.io/grocery-list-mallan/`.
 
 (Alternative: Cloudflare Pages or Netlify can connect to the same GitHub
 repo with a couple of clicks if you'd rather use those.)
